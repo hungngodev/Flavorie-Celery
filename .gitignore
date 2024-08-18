@@ -1,0 +1,7 @@
+#python
+__pycache__/
+cc.en.300.bin.gz.part
+cc.en.300.bin.gz
+cc.en.300.bin
+.env
+venv/
