@@ -1,6 +1,5 @@
 import redis
 from celery import Celery
-import time
 from dotenv import load_dotenv
 import logging
 import os
@@ -94,6 +93,5 @@ def handle_receipts_stream(consumer_name):
                         
                     logger.info("Notification created: " + str(new_noti.inserted_id))
             
-            time.sleep(5)
         except redis.exceptions.ConnectionError as e:
             print(f"Redis connection error: {e}")
