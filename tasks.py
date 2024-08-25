@@ -95,3 +95,4 @@ def handle_receipts_stream(consumer_name):
             
         except redis.exceptions.ConnectionError as e:
             print(f"Redis connection error: {e}")
+
