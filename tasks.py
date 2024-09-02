@@ -12,7 +12,7 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 app = Celery('tasks', broker=os.getenv('REDIS_URL'), backend=os.getenv('REDIS_URL'))
-
+print(os.getenv('REDIS_URL'))
 redis_client = redis.StrictRedis.from_url(os.getenv("REDIS_URL"))
 
 
@@ -96,3 +96,6 @@ def handle_receipts_stream(consumer_name):
         except redis.exceptions.ConnectionError as e:
             print(f"Redis connection error: {e}")
 
+handle_receipts_stream.delay('consumer1')
+handle_receipts_stream.delay('consumer2')
+handle_receipts_stream.delay('consumer3')
