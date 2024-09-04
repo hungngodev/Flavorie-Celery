@@ -7,6 +7,7 @@ from pymongo import MongoClient
 from app.receipts import scan_receipt
 from bson import ObjectId
 from datetime import datetime, timezone
+import torch.multiprocessing as mp
 import signal
 load_dotenv()
 
@@ -75,7 +76,7 @@ def handle_receipts_stream(consumer_name):
                     user_id = message_data['userId']
                     timestamp =datetime.now(timezone.utc)
                     receipt_url = message_data['receipt']
-
+                    print("getting receipt")
                     result = scan_receipt(receipt_url, mongo_client)
                     logger.info("Processing done")
                     redis_client.xack(stream_key, consumer_group, message_id)
