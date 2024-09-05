@@ -22,5 +22,5 @@ COPY . /myapp
 # USER myuser
 
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-CMD ["sh", "/entrypoint.sh"]
+# RUN chmod +x /entrypoint.sh
+CMD celery -A tasks.app purge -f && celery -A tasks.app worker --loglevel=info
