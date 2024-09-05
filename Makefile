@@ -18,3 +18,6 @@ push:
 
 clean:
 	@docker rmi -f ${images_name}
+
+run:
+	@docker run --cpus="5.0" --memory="16g" --shm-size="64g" -d ${IMAGE_TAG}

@@ -5,13 +5,16 @@ from app.utils import post_process, match_ingredients
 from PIL import Image
 import requests
 from io import BytesIO
-import traceback
 import logging
+import nltk
 
 logging.basicConfig(level=logging.DEBUG)
 print("Loading model")
 
-        
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+         
 def process_receipt_task(img, mongo_client):
         print("Processing image")   
         processor = DonutProcessor.from_pretrained("AdamCodd/donut-receipts-extract")
