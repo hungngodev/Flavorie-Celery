@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.10.14
 # RUN addgroup --system mygroup && adduser --system --ingroup mygroup myuser
 RUN mkdir /myapp
 WORKDIR /myapp

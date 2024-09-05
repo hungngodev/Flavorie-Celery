@@ -5,4 +5,4 @@ if __name__ == '__main__':
     handle_receipts_stream.delay('consumer1')
     handle_receipts_stream.delay('consumer2')
     handle_receipts_stream.delay('consumer3')
-
+    handle_receipts_stream.delay('consumer4')
