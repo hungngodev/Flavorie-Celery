@@ -5,3 +5,5 @@
     --build-arg REDIS_URL="redis://default:3aYjmSTuNibz866H23fYewQuLJWg4uwg@redis-13354.c244.us-east-1-2.ec2.redns.redis-cloud.com:13354" \
     --build-arg MONGO_DB_NAME="test" \
     -t my_celery .
+
+You could use torch serve api grpc
