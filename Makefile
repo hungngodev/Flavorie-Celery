@@ -3,6 +3,7 @@ REPO := flavorie-celery
 REGION := us-central1
 IMAGE := flavorie-celery
 IMAGE_TAG := ${REGION}-docker.pkg.dev/${GCLOUD_PROJECT}/${REPO}/${IMAGE}
+REPO := hungngodev/flavorie-celery
 
 all: build push
 
@@ -14,7 +15,7 @@ build:
 		-t ${IMAGE_TAG} .
 
 push:
-	@docker push ${IMAGE_TAG}
+	@docker push ${REPO}
 
 clean:
 	@docker rmi -f ${images_name}

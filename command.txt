@@ -7,3 +7,5 @@
     -t my_celery .
 
 You could use torch serve api grpc
+docker pull us-central1-docker.pkg.dev/flavorie-434420/flavorie-celery/flavorie-celery
+ 
