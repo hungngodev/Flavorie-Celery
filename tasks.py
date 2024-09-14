@@ -9,13 +9,16 @@ from bson import ObjectId
 from datetime import datetime, timezone
 import torch.multiprocessing as mp
 import signal
+from huggingface_hub import login
+
 load_dotenv()
+
+login(token = os.getenv("HUGGINGFACE_TOKEN"))
 
 logger = logging.getLogger(__name__)
 app = Celery('tasks', broker=os.getenv('REDIS_URL'), backend=os.getenv('REDIS_URL'))
 print(os.getenv('REDIS_URL'))
 redis_client = redis.StrictRedis.from_url(os.getenv("REDIS_URL"))
-
 
 @app.task
 def process_message(message_id, message_data, consumer_name):
