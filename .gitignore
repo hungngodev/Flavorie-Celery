@@ -6,3 +6,4 @@ cc.en.300.bin
 .env
 venv/
 *.txt
+*.safetensors
