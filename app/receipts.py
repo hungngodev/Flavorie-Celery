@@ -20,8 +20,8 @@ local_directory = "/Users/hung/Documents/coding/SoftwareDevelopment/Flavorie-Cel
          
 def process_receipt_task(img, mongo_client):
         print("Processing image")   
-        processor = DonutProcessor.from_pretrained(local_directory, local_files_only=True)
-        model = VisionEncoderDecoderModel.from_pretrained(local_directory, local_files_only=True)
+        processor = DonutProcessor.from_pretrained("AdamCodd/donut-receipts-extract", revision= "v1")
+        model = VisionEncoderDecoderModel.from_pretrained("AdamCodd/donut-receipts-extract", revision = "v1")
         device = "cuda" if torch.cuda.is_available() else "cpu"
         model.to(device)
         task_prompt = "<s_cord-v2>" # <s_receipt> for v2

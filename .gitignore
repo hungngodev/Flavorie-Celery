@@ -5,3 +5,4 @@ cc.en.300.bin.gz
 cc.en.300.bin
 .env
 venv/
+*.txt
